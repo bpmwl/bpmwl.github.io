@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#081016" />
+    <meta
+      name="description"
+      content="OneFocus is a live index of the AI models, tools, and ideas shaping my work."
+    />
+    <title>OneFocus — AI Creator</title>
+    <script>
+      try {
+        const storedTheme = localStorage.getItem("onefocus-theme");
+        document.documentElement.dataset.theme = storedTheme || "dark";
+      } catch {
+        document.documentElement.dataset.theme = "dark";
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
