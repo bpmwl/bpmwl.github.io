@@ -1,0 +1,184 @@
+media:
+  - name: images
+    label: Images
+    input: public/uploads
+    output: /uploads
+    rename: safe
+    categories: [image]
+
+settings:
+  content:
+    merge: true
+
+content:
+  - name: focus
+    label: Focus
+    type: collection
+    path: content/focus
+    format: yaml-frontmatter
+    filename:
+      template: "{rank}-{primary}.md"
+      field: create
+    view:
+      fields: [rank, title, status, updated]
+      primary: title
+      sort: [rank, updated, title]
+      default:
+        sort: rank
+        order: asc
+    fields:
+      - name: title
+        label: Model or tool
+        type: string
+        required: true
+      - name: rank
+        label: Rank
+        type: number
+        required: true
+      - name: status
+        label: Status
+        type: select
+        required: true
+        options:
+          values: [ACTIVE, WATCHING, TESTING, ARCHIVED]
+      - name: why
+        label: Why now
+        type: text
+        required: true
+      - name: updated
+        label: Updated
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: published
+        label: Published
+        type: boolean
+        default: true
+      - name: body
+        label: Reasoning
+        type: rich-text
+        options:
+          format: markdown
+          media: false
+
+  - name: notes
+    label: Notes
+    type: collection
+    path: content/notes
+    format: yaml-frontmatter
+    filename:
+      template: "{year}-{month}-{day}-{primary}.md"
+      field: create
+    view:
+      fields: [title, date, published]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: summary
+        label: Summary
+        type: text
+        required: true
+      - name: published
+        label: Published
+        type: boolean
+        default: true
+      - name: body
+        label: Note
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          media: images
+          path: public/uploads/notes
+          rename: safe
+
+  - name: posts
+    label: Posts
+    type: collection
+    path: content/posts
+    format: yaml-frontmatter
+    filename:
+      template: "{year}-{month}-{day}-{primary}.md"
+      field: create
+    view:
+      fields: [title, date, published]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: description
+        label: Description
+        type: text
+        required: true
+      - name: tags
+        label: Tags
+        type: select
+        options:
+          multiple: true
+          values: [AI, Models, Tools, Workflow, Research, Systems, Creator]
+      - name: published
+        label: Published
+        type: boolean
+        default: true
+      - name: body
+        label: Post
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          media: images
+          path: public/uploads/posts
+          rename: safe
+
+  - name: site
+    label: Site settings
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: title
+        label: Site name
+        type: string
+        required: true
+      - name: subtitle
+        label: Subtitle
+        type: string
+        required: true
+      - name: description
+        label: Intro
+        type: text
+        required: true
+      - name: githubLabel
+        label: GitHub label
+        type: string
+        required: true
+      - name: githubUrl
+        label: GitHub URL
+        type: string
+        required: true
