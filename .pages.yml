@@ -11,10 +11,10 @@ settings:
     merge: true
 
 content:
-  - name: focus
-    label: Focus
+  - name: /lobby
+    label: /lobby
     type: collection
-    path: content/focus
+    path: content//lobby
     format: yaml-frontmatter
     filename:
       template: "{rank}-{primary}.md"
