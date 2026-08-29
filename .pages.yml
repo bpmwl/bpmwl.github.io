@@ -11,10 +11,10 @@ settings:
     merge: true
 
 content:
-  - name: /lobby
-    label: /lobby
+  - name: lobby
+    label: lobby
     type: collection
-    path: content//lobby
+    path: content/lobby
     format: yaml-frontmatter
     filename:
       template: "{rank}-{primary}.md"
