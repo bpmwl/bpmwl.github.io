@@ -1,11 +1,11 @@
 ---
-title: Why I am building OneFocus
-date: 2026-08-28
+title: About
+date: 1900-09-04
 description: A living index is more useful than another static list of AI tools.
-tags: [AI, workflow]
+tags:
+  - AI
 published: true
 ---
-
 AI priorities change too quickly for a static profile.
 
 OneFocus is a place to keep the models, tools, and ideas that matter **right now** — with enough context to remember why they mattered.
