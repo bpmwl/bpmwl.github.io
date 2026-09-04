@@ -11,10 +11,10 @@ settings:
     merge: true
 
 content:
-  - name: lobby
-    label: lobby
+  - name: OneFocus
+    label: OneFocus
     type: collection
-    path: content/lobby
+    path: content/OneFocus
     format: yaml-frontmatter
     filename:
       template: "{rank}-{primary}.md"
