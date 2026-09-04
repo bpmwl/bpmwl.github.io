@@ -11,10 +11,10 @@ settings:
     merge: true
 
 content:
-  - name: OneFocus
-    label: OneFocus
+  - name: focus
+    label: focus
     type: collection
-    path: content/OneFocus
+    path: content/focus
     format: yaml-frontmatter
     filename:
       template: "{rank}-{primary}.md"
